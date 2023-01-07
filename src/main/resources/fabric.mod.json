@@ -15,9 +15,10 @@
   "icon": "assets/chatwalk/icon.png",
 
   "environment": "client",
-  "mixins": [
-    "chatwalk.mixins.json"
-  ],
+  "entrypoints": {
+    "preLaunch": [ "com.llamalad7.mixinextras.MixinExtrasBootstrap::init"]
+  },
+  "mixins": [ "chatwalk.mixins.json" ],
 
   "depends": {
     "fabricloader": ">=0.14.11",
