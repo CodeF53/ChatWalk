@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 import static net.chatwalk.LiterallyJustOneBoolean.LieAboutMovingForward;
 
-@Mixin(KeyboardInput.class)
+@Mixin(value = KeyboardInput.class, priority = 999)
 public class Lie {
     @Redirect(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/KeyMapping;isDown()Z", ordinal = 0))
     private boolean lie(KeyMapping instance) {

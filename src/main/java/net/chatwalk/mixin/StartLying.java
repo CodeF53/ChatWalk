@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 import static net.chatwalk.LiterallyJustOneBoolean.LieAboutMovingForward;
 
-@Mixin(Minecraft.class)
+@Mixin(value = Minecraft.class, priority = 999)
 public abstract class StartLying {
 	@Shadow protected abstract void openChatScreen(String string);
 
